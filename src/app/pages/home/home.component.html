@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+
+<section class="hero-section">
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Hola, soy <span class="highlight">Laura Sophia</span>
+        </h1>
+        <p class="hero-subtitle">
+          Desarrolladora Web Full Stack & Diseñadora UX/UI
+        </p>
+        <p class="hero-description">
+          Creo experiencias digitales excepcionales combinando código limpio, 
+          diseño intuitivo y soluciones innovadoras para el mundo web.
+        </p>
+        <div class="hero-actions">
+          <a routerLink="/projects" class="btn btn-primary">
+            Ver Proyectos
+          </a>
+          <a routerLink="/contact" class="btn btn-outline">
+            Contactar
+          </a>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="profile-card">
+          <div class="profile-image">
+            <div class="image-placeholder">
+              <span class="initials">LS</span>
+            </div>
+          </div>
+          <div class="tech-stack">
+            <div class="tech-item" *ngFor="let tech of techStack()">
+              <span class="tech-icon">{{ tech.icon }}</span>
+              <span class="tech-name">{{ tech.name }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features-section">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-card" *ngFor="let feature of features()">
+        <div class="feature-icon">{{ feature.icon }}</div>
+        <h3 class="feature-title">{{ feature.title }}</h3>
+        <p class="feature-description">{{ feature.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

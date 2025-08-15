@@ -1,0 +1,121 @@
+<app-navbar></app-navbar>
+
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-header">
+      <h1 class="section-title">Contacto</h1>
+      <p class="section-subtitle">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+    </div>
+    
+    <div class="contact-content">
+      <div class="contact-info">
+        <div class="info-card">
+          <h2 class="info-title">Información de Contacto</h2>
+          <p class="info-description">
+            Estoy disponible para proyectos freelance, colaboraciones y oportunidades laborales. 
+            No dudes en contactarme para discutir cómo podemos trabajar juntos.
+          </p>
+          
+          <div class="contact-methods">
+            <div class="contact-method" *ngFor="let method of contactMethods()">
+              <div class="method-icon">{{ method.icon }}</div>
+              <div class="method-details">
+                <h3 class="method-title">{{ method.title }}</h3>
+                <p class="method-value">{{ method.value }}</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="social-links">
+            <h3 class="social-title">Sígueme en redes sociales</h3>
+            <div class="social-grid">
+              <a [href]="social.link" target="_blank" class="social-link" *ngFor="let social of socialLinks()">
+                <span class="social-icon">{{ social.icon }}</span>
+                <span class="social-name">{{ social.name }}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form">
+        <div class="form-card">
+          <h2 class="form-title">Envíame un mensaje</h2>
+          <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+            <div class="form-group">
+              <label for="name" class="form-label">Nombre completo *</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                [(ngModel)]="formData.name" 
+                required
+                class="form-input"
+                placeholder="Tu nombre completo"
+              >
+            </div>
+            
+            <div class="form-group">
+              <label for="email" class="form-label">Correo electrónico *</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                [(ngModel)]="formData.email" 
+                required
+                class="form-input"
+                placeholder="tu@email.com"
+              >
+            </div>
+            
+            <div class="form-group">
+              <label for="subject" class="form-label">Asunto *</label>
+              <input 
+                type="text" 
+                id="subject" 
+                name="subject" 
+                [(ngModel)]="formData.subject" 
+                required
+                class="form-input"
+                placeholder="¿En qué puedo ayudarte?"
+              >
+            </div>
+            
+            <div class="form-group">
+              <label for="message" class="form-label">Mensaje *</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                [(ngModel)]="formData.message" 
+                required
+                rows="6"
+                class="form-textarea"
+                placeholder="Cuéntame sobre tu proyecto..."
+              ></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn" [disabled]="!contactForm.form.valid || isSubmitting()">
+              <span *ngIf="!isSubmitting()">Enviar mensaje</span>
+              <span *ngIf="isSubmitting()">Enviando...</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="availability-section">
+  <div class="container">
+    <div class="availability-content">
+      <h2 class="availability-title">Disponibilidad</h2>
+      <div class="availability-grid">
+        <div class="availability-card" *ngFor="let status of availabilityStatus()">
+          <div class="status-icon">{{ status.icon }}</div>
+          <h3 class="status-title">{{ status.title }}</h3>
+          <p class="status-description">{{ status.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

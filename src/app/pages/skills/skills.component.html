@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+
+<section class="skills-section">
+  <div class="container">
+    <div class="skills-header">
+      <h1 class="section-title">Mis Habilidades</h1>
+      <p class="section-subtitle">Tecnologías y herramientas que domino</p>
+    </div>
+    
+    <div class="skills-content">
+      <div class="skills-category" *ngFor="let category of skillCategories()">
+        <h2 class="category-title">{{ category.title }}</h2>
+        <div class="skills-grid">
+          <div class="skill-card" *ngFor="let skill of category.skills">
+            <div class="skill-icon">{{ skill.icon }}</div>
+            <h3 class="skill-name">{{ skill.name }}</h3>
+            <div class="skill-level">
+              <div class="level-bar">
+                <div class="level-fill" [style.width.%]="skill.level"></div>
+              </div>
+              <span class="level-text">{{ skill.level }}%</span>
+            </div>
+            <p class="skill-description">{{ skill.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tools-section">
+  <div class="container">
+    <h2 class="section-title">Herramientas y Tecnologías</h2>
+    <div class="tools-grid">
+      <div class="tool-item" *ngFor="let tool of tools()">
+        <div class="tool-icon">{{ tool.icon }}</div>
+        <span class="tool-name">{{ tool.name }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="learning-section">
+  <div class="container">
+    <div class="learning-content">
+      <h2 class="section-title">Aprendiendo Actualmente</h2>
+      <p class="learning-description">
+        Me mantengo actualizada con las últimas tecnologías y tendencias del desarrollo web
+      </p>
+      <div class="learning-grid">
+        <div class="learning-card" *ngFor="let tech of learningTechs()">
+          <div class="learning-icon">{{ tech.icon }}</div>
+          <h3 class="learning-name">{{ tech.name }}</h3>
+          <p class="learning-status">{{ tech.status }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,81 @@
+<app-navbar></app-navbar>
+
+<section class="about-section">
+  <div class="container">
+    <div class="about-header">
+      <h1 class="section-title">Sobre Mí</h1>
+      <p class="section-subtitle">Conoce mi trayectoria profesional y pasión por el desarrollo web</p>
+    </div>
+    
+    <div class="about-content">
+      <div class="about-text">
+        <div class="about-card">
+          <h2 class="card-title">Mi Historia</h2>
+          <p class="card-text">
+            Soy Laura Sophia Zapata Coronado, una desarrolladora web apasionada por crear 
+            experiencias digitales excepcionales. Mi viaje en el mundo del desarrollo comenzó 
+            hace más de 2 años, cuando descubrí mi pasión por transformar ideas en aplicaciones 
+            web funcionales y atractivas.
+          </p>
+          <p class="card-text">
+            Me especializo en desarrollo frontend con Angular y React, combinando mis habilidades 
+            técnicas con un fuerte sentido del diseño y la experiencia del usuario. Mi objetivo 
+            es crear aplicaciones que no solo funcionen perfectamente, sino que también deleiten 
+            a los usuarios con interfaces intuitivas y modernas.
+          </p>
+        </div>
+        
+        <div class="about-card">
+          <h2 class="card-title">Mi Enfoque</h2>
+          <p class="card-text">
+            Creo en la importancia de entender las necesidades del usuario antes de escribir 
+            una sola línea de código. Mi proceso incluye investigación, diseño iterativo y 
+            desarrollo colaborativo para asegurar que cada proyecto cumpla con los objetivos 
+            establecidos y supere las expectativas.
+          </p>
+          <p class="card-text">
+            Me mantengo constantemente actualizada con las últimas tecnologías y mejores 
+            prácticas del desarrollo web. Participo en comunidades de desarrolladores, 
+            sigo blogs técnicos y tomo cursos online para expandir mis habilidades y 
+            ofrecer soluciones cada vez más innovadoras.
+          </p>
+        </div>
+      </div>
+      
+      <div class="about-sidebar">
+        <div class="stats-card">
+          <h3 class="stats-title">Estadísticas</h3>
+          <div class="stats-grid">
+            <div class="stat-item" *ngFor="let stat of stats()">
+              <div class="stat-number">{{ stat.number }}</div>
+              <div class="stat-label">{{ stat.label }}</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="interests-card">
+          <h3 class="interests-title">Intereses</h3>
+          <div class="interests-list">
+            <div class="interest-item" *ngFor="let interest of interests()">
+              <span class="interest-icon">{{ interest.icon }}</span>
+              <span class="interest-text">{{ interest.text }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="values-section">
+  <div class="container">
+    <h2 class="section-title">Mis Valores</h2>
+    <div class="values-grid">
+      <div class="value-card" *ngFor="let value of values()">
+        <div class="value-icon">{{ value.icon }}</div>
+        <h3 class="value-title">{{ value.title }}</h3>
+        <p class="value-description">{{ value.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

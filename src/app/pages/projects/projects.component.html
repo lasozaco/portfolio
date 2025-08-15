@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+
+<section class="projects-section">
+  <div class="container">
+    <div class="projects-header">
+      <h1 class="section-title">Mis Proyectos</h1>
+      <p class="section-subtitle">Una muestra de mi trabajo y las tecnologías que utilizo</p>
+    </div>
+    
+    <div class="projects-grid">
+      <div class="project-card" *ngFor="let project of projects()">
+        <div class="project-image">
+          <div class="image-placeholder">
+            <span class="project-icon">{{ project.icon }}</span>
+          </div>
+          <div class="project-overlay">
+            <div class="project-links">
+              <a [href]="project.demo" target="_blank" class="project-link" *ngIf="project.demo">
+                <span class="link-icon">🌐</span>
+                Demo
+              </a>
+              <a [href]="project.github" target="_blank" class="project-link" *ngIf="project.github">
+                <span class="link-icon">📁</span>
+                Código
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-content">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+          
+          <div class="project-tech">
+            <span class="tech-tag" *ngFor="let tech of project.technologies">
+              {{ tech }}
+            </span>
+          </div>
+          
+          <div class="project-features">
+            <h4 class="features-title">Características principales:</h4>
+            <ul class="features-list">
+              <li *ngFor="let feature of project.features">{{ feature }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title">¿Tienes un proyecto en mente?</h2>
+      <p class="cta-description">
+        Me encantaría escuchar sobre tu proyecto y ayudarte a hacerlo realidad. 
+        Trabajemos juntos para crear algo increíble.
+      </p>
+      <a routerLink="/contact" class="cta-button">
+        Hablemos de tu proyecto
+      </a>
+    </div>
+  </div>
+</section>
